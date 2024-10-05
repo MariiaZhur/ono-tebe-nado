@@ -8,10 +8,7 @@
   padding: 86px 42px 12px 32px;
   background-color: white;
 }
-
-/*.header__menu {
-
-}
+/*.header__menu {}
 */
 .header__menu_list {
   display: flex;
@@ -43,7 +40,7 @@
 
 .address {
   justify-self: end;
-  height: 136px;
+  /* убрали высоту блока */
   padding: 14px 45px 0 0;
   color: black;
   font-family: Raleway, sans-serif;
@@ -65,53 +62,50 @@
 .overlay {
   position: absolute; /* Абсолютное позиционирование для оверлея */
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* добавлено */
+  background-color: rgba(0, 0, 0, 0.6); /* изменено затемнение */
 }
 
 .cover__title {
-  padding: 165px 22px 0 0;
+  position: relative;
+  z-index: 1;
+  min-height: 355px;
+  padding: 165px 50px 80px 50px;
   color: white;
-  font-size: 104px;
-  letter-spacing: 25px;
+  font-size: 100px;
+  letter-spacing: 30px;
   text-transform: uppercase;
 }
 
 .aligned-text {
   display: block;
-}
-
-.aligned-text_up {
-  padding: 5px 0 0 48px;
-  line-height: 100%;
+  line-height: 124%;
+  letter-spacing: 30px; /* добавлено */
 }
 
 .aligned-text_center {
-  padding: 23px 0 0 24px;
-  line-height: 1;
-  letter-spacing: 5px;
   text-align: center;
 }
 
 .aligned-text_right {
-  padding: 17px 0 0 28px;
-  line-height: 1;
   text-align: right;
 }
 
-.no-letterspacing {
-  letter-spacing: 26px;
+.no-letter-spacing {
+  letter-spacing: 0px; /* изменено на 0 */
 }
 
 .letter-spacing-extended {
-  letter-spacing: 0.57em;
+  letter-spacing: 60px; /* добавлено */
 }
 
 .cover__description {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 2fr 1fr;
   place-items: center;
-  height: 150px;
-  margin: 85px 3px 0 45px;
+  margin: 40px 3px 0 45px;
 }
 
 .cover__description-text {
@@ -128,6 +122,7 @@
   border: 2px solid white;
   padding: 10px 20px;
   color: white;
+  font-family: Raleway, sans-serif;
   font-size: 22px;
   text-transform: uppercase;
   background-color: transparent;
@@ -145,19 +140,19 @@
 
 .lots__card-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* добавлено */
+  justify-content: flex-start; /* изменено */
   gap: 25px;
   height: 100%;
   margin: 0 24px 25px;
   color: white;
   list-style-type: none;
-
 }
 
 .lots__card-list-item {
   flex: 1;
   align-items: stretch;
-  height: 563px;
+  min-height: 563px; /* изменено на минимальную высоту*/
   background-repeat: no-repeat;
 }
 
@@ -166,12 +161,14 @@
 }
 
 .card__title {
+  z-index: 1; /* добавлено */
   font-size: 22px;
   text-decoration: underline;
   text-transform: uppercase;
 }
 
 .card__text {
+  z-index: 1; /* добавлено */
   font-family: Raleway, sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -181,7 +178,8 @@
 .card {
   position: relative;
   height: 100%;
-  background-position: center;
+  background-position: center; /* для 3 картинок */
+  background-size: cover;
 }
 
 .text-card-inside {
@@ -189,23 +187,22 @@
   flex-direction: column; /* Располагаем элементы вертикально */
   justify-content: space-between; /* Равномерно распределяем элементы */
   align-items: center;
-  padding: 51px 40px 48px 40px;
+  width: 100%;
+  height: 100%;
+  padding: 50px 40px 48px 40px;
   background-repeat: no-repeat;
 }
 
 .card_type_film {
   background-image: url("../images/card-lot-01.jpg");
-  background-size: cover;
 }
 
 .card_type_book {
   background-image: url("../images/card-lot-02.jpg");
-  background-size: cover;
 }
 
 .card_type_picture {
   background-image: url("../images/card-lot-03.jpg");
-  background-size: cover;
 }
 
 .lots__look-more-link {
@@ -217,7 +214,6 @@
 .about {
   display: grid;
   grid-template-columns: 312px auto;
-  grid-template-rows: 240px auto;
   margin: 181px 0 0 70px;
 }
 
@@ -248,15 +244,15 @@
   grid-column-end: 4;
   justify-self: start;
   align-self: center;
-  margin-top: 8px;
-  font-size: 27px;
+  margin-top: 100px;
+  font-size: 40px;
   text-transform: uppercase;
 }
 
 .about__text {
   grid-column-start: 2;
   grid-column-end: 4;
-  margin: 8px 30px 0 0;
+  margin: 100px 30px 0 0;
   font-size: 20px;
 }
 
@@ -265,21 +261,12 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 181px 50px 88px 50px;
-}
-
-.footer_address {
-  justify-self: end;
-  height: 100px;
-  color: black;
-  font-family: Raleway, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  line-height: 1.38;
+  margin: 170px 50px 88px 50px;
 }
 
 .footer__menu {
-  margin-left: 38px;
+  margin-top: 13px;
+  margin-left: 0px;
 }
 
 .footer__menu_list {
@@ -288,7 +275,6 @@
 }
 /* .footer__link {}
  */
-
 .footer__links-list-item_no-bullit {
   list-style: none;
 }
@@ -305,5 +291,6 @@
 .footer__social-list-item {
   display: flex;
   gap: 48px;
+  margin-top: 12px;
   list-style: none;
 }
