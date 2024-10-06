@@ -3,9 +3,8 @@
   grid-template-columns: 1fr 148px 1fr;
   box-sizing: border-box;
   height: auto;
-  min-height: 293px;
   margin-bottom: 0;
-  padding: 86px 42px 12px 32px;
+  padding: 87px 42px 80px 32px;
   background-color: white;
 }
 /*.header__menu {}
@@ -69,8 +68,7 @@
 .cover__title {
   position: relative;
   z-index: 1;
-  min-height: 355px;
-  padding: 165px 50px 80px 50px;
+  padding: 161px 50px 80px 50px;
   color: white;
   font-size: 100px;
   letter-spacing: 30px;
@@ -129,7 +127,7 @@
 }
 
 .lots {
-  margin-top: 179px;
+  margin-top: 180px;
   font-size: 27px;
   text-transform: uppercase;
 }
@@ -150,7 +148,7 @@
 }
 
 .lots__card-list-item {
-  flex: 1;
+  flex: 0 1 334px; /* добавлено свойство, карточка переносится с сохранением ширины*/
   align-items: stretch;
   min-height: 563px; /* изменено на минимальную высоту*/
   background-repeat: no-repeat;
